@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>عدسة مُحوِّلات الطاقة | الواقع المعزز</title>
 <style>
-@font-face{font-family:Majalla;src:url(assets/fonts/majalla.ttf)}
+@font-face{font-family:Majalla;src:url(majalla.ttf)}
 :root{--hh:54px;--st:env(safe-area-inset-top,0px);--a:.62;--navy:#1f2a5c;--teal:#14967f;--amber:#f2a516;--rose:#e2557b;--violet:#7b5cd6}
 *{box-sizing:border-box;font-family:Majalla,'Sakkal Majalla',serif}
 html,body{margin:0;height:100%;overflow:hidden;background:#000;color:var(--navy)}
-#bg{position:fixed;inset:0;background:url(assets/img/hall.jpg) center/cover}
+#bg{position:fixed;inset:0;background:url(hall.jpg) center/cover}
 video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover}
 #cv{position:fixed;inset:0;width:100%;height:100%;touch-action:none}
 .top{position:fixed;top:calc(8px + var(--hh) + var(--st));left:8px;right:8px;display:flex;gap:6px;align-items:center;z-index:5;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.top::-webkit-scrollbar,.bottom::-webkit-scrollbar{display:none}.top>*{flex:none}
@@ -35,7 +35,7 @@ video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover}
 .verse small{display:block;font-size:19px;color:#8a6d2b}
 .ans{display:none;background:#e6f6f1;color:#0b6b59;border-radius:12px;padding:8px 12px;margin-top:8px;font-weight:700}
 .open .ans{display:block}.open .rev{display:none}
-.start{position:fixed;inset:0;z-index:30;display:flex;overflow:auto;padding:calc(12px + var(--hh) + var(--st)) 10px 12px;background:url(assets/img/hall.jpg) center/cover}
+.start{position:fixed;inset:0;z-index:30;display:flex;overflow:auto;padding:calc(12px + var(--hh) + var(--st)) 10px 12px;background:url(hall.jpg) center/cover}
 .start .box{text-align:center;display:flex;gap:10px;align-items:flex-end;width:min(720px,94vw)}
 .start img{height:300px;flex:none}
 .gal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:6px 0}.gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.15)}
@@ -51,7 +51,7 @@ video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover}
 </style>
 <style>a[href="index.html"]{display:none!important}</style></head>
 <body>
-<header class="hdr"><div class="hr">المملكة العربية السعودية<br>وزارة التعليم</div><img src="assets/img/moe.png" alt="وزارة التعليم"><div class="hl">فيزياء 2 • الدرس <bdi dir="ltr">5-1</bdi><br>المعلمة: <b>أ. ريم الحربي</b></div></header>
+<header class="hdr"><div class="hr">المملكة العربية السعودية<br>وزارة التعليم</div><img src="moe.png" alt="وزارة التعليم"><div class="hl">فيزياء 2 • الدرس <bdi dir="ltr">5-1</bdi><br>المعلمة: <b>أ. ريم الحربي</b></div></header>
 <div id="bg"></div>
 <video id="vid" playsinline muted autoplay></video>
 <canvas id="cv"></canvas>
@@ -75,14 +75,14 @@ video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover}
 <div class="start" id="start">
   <div class="box">
     <div style="flex:1">
-      <h2>📱 عدسة مُحوِّلات الطاقة</h2><div class="gal"><img src="assets/img/ramp.jpg"><img src="assets/img/pendulum.jpg"><img src="assets/img/spring.jpg"><img src="assets/img/park.jpg"><img src="assets/img/archery.jpg"><img src="assets/img/library.jpg"><img src="assets/img/wheel.jpg"></div>
+      <h2>📱 عدسة مُحوِّلات الطاقة</h2><div class="gal"><img src="ramp.jpg"><img src="pendulum.jpg"><img src="spring.jpg"><img src="park.jpg"><img src="archery.jpg"><img src="library.jpg"><img src="wheel.jpg"></div>
       <p><b>الواقع المعزز • الأشكال المتعددة للطاقة</b></p>
       <p>شغّلي الكاميرا ثم اضغطي على الطاولة أو الأرض لتظهر المجسّمات فوق الواقع: كرة تسقط، وبندول، ونابض، وأفعوانية، وقوس، مع أعمدة الطاقة وقيمها مباشرة.</p>
       <button class="btn" id="camOn">📷 تشغيل الكاميرا</button>
       <button class="btn alt" id="camOff">🖼 بدون كاميرا</button>
       <p style="font-size:18px;color:#7d8bb3">تعمل الكاميرا عند فتح الصفحة في المتصفح (Chrome أو Safari) والسماح بالوصول إليها.</p>
     </div>
-    <img src="assets/img/guide.png" alt="">
+    <img src="guide.png" alt="">
   </div>
 </div>
 
@@ -185,8 +185,8 @@ wheel:{img:'wheel',name:'🎡 عجلة دوّارة',q:'عجلة تدور حول
   meter(x+R+30*s,y,s,[{l:'دورانية',v:KE,c:'#e2557b'}],0.5*I*25)}}
 };
 let cur='ball',anchor=null,size=1;
-function setBg(){$('bg').style.backgroundImage=`url(assets/img/${M[cur].img}.jpg)`}
-const chips=$('chips');Object.entries(M).forEach(([k,m])=>{const b=document.createElement('button');b.className='chip'+(k===cur?' on':'');b.innerHTML=`<img src="assets/img/${m.img}.jpg" alt="">${m.name}`;b.onclick=()=>{cur=k;setBg();document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b));toast('👆 اضغطي على المكان الذي تريدين وضع '+m.name.slice(2)+' فيه')};chips.appendChild(b)});
+function setBg(){$('bg').style.backgroundImage=`url(${M[cur].img}.jpg)`}
+const chips=$('chips');Object.entries(M).forEach(([k,m])=>{const b=document.createElement('button');b.className='chip'+(k===cur?' on':'');b.innerHTML=`<img src="${m.img}.jpg" alt="">${m.name}`;b.onclick=()=>{cur=k;setBg();document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b));toast('👆 اضغطي على المكان الذي تريدين وضع '+m.name.slice(2)+' فيه')};chips.appendChild(b)});
 /* draggable law tags */
 const LAWS=[{s:'KE = ½mv²',x:.82,y:.30,c:'#e2557b'},{s:'PE = mgh',x:.82,y:.42,c:'#14967f'},{s:'W = ΔKE',x:.82,y:.54,c:'#f2a516'},{s:'E₀ = mc²',x:.82,y:.66,c:'#7b5cd6'}];
 let dragLaw=null;
@@ -224,7 +224,7 @@ $('snap').onclick=()=>{const c=document.createElement('canvas');c.width=cv.width
  const drawBg=src=>{const sw=src.videoWidth||src.naturalWidth,sh=src.videoHeight||src.naturalHeight;const sc=Math.max(c.width/sw,c.height/sh);x.drawImage(src,(c.width-sw*sc)/2,(c.height-sh*sc)/2,sw*sc,sh*sc)};
  const fin=()=>{x.drawImage(cv,0,0);x.font=`700 ${22*DPR}px ${F}`;x.fillStyle='rgba(31,42,92,.85)';const txt=$('tbadge').innerText.replace(/\n/g,'  •  ');const w=x.measureText(txt).width+30*DPR;x.fillRect(c.width-w-10*DPR,c.height-46*DPR,w,36*DPR);x.fillStyle='#fff';x.textAlign='right';x.textBaseline='middle';x.fillText(txt,c.width-25*DPR,c.height-28*DPR);
   const a=document.createElement('a');a.download='الواقع-المعزز-الطاقة.png';a.href=c.toDataURL('image/png');a.click();toast('📸 حُفظت الصورة')};
- if(vid.style.display==='block'&&vid.videoWidth){drawBg(vid);fin()}else{const im=new Image();im.onload=()=>{drawBg(im);fin()};im.src=`assets/img/${M[cur].img}.jpg`}};
+ if(vid.style.display==='block'&&vid.videoWidth){drawBg(vid);fin()}else{const im=new Image();im.onload=()=>{drawBg(im);fin()};im.src=`${M[cur].img}.jpg`}};
 document.documentElement.style.setProperty('--a',.62);
 $('alpha').oninput=e=>document.documentElement.style.setProperty('--a',e.target.value);
 $('fs').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()};
